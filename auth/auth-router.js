@@ -24,6 +24,9 @@ router.post('/login', (req, res) => {
   Users.findBy({ username })
     .first()
     .then(user => {
+      req.session.username = user.username
+      console.log('session', req.session)
+      
       if (user && bcrypt.compareSync(password, user.password)) {
         res.status(200).json({
           message: `Welcome ${user.username}!`,
