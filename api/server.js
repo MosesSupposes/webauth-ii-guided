@@ -17,7 +17,7 @@ const sessionConfiguration = {
     secure: false // use cookie over HTTPS only. Should be true in production.
   },
   resave: false,
-  saveUnitialized: true // read about GDPR compliance 
+  saveUninitialized: true // read about GDPR compliance 
 }
 
 server.use(sessions(sessionConfiguration))
