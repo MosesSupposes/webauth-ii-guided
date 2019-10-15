@@ -12,7 +12,7 @@ const server = express();
 
 const sessionConfiguration = {
   name: 'littybop',
-  secret: process.env.NODE_ENV || 'this is not secret',
+  secret: process.env.SESSION_SECRET || 'this is not secret',
   cookie: {
     httpOnly: true, // JS cannot access the cookies
     maxAge: 1000 * 60 * 60, // one hour
